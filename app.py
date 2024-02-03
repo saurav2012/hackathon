@@ -7,6 +7,11 @@ model = pickle.load(open('new_prediction.pkl', 'rb'))
 
 app = Flask(__name__)
 
+
+@app.route('/')
+def start(): 
+    return "welcome"
+
 @app.route('/predict', methods=['POST'])
 def home(): 
     data1 = int(request.form['Year'])
